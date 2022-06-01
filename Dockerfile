@@ -1,6 +1,6 @@
 FROM twobombs/cudacluster:dev
 
-RUN apt update && apt install -y libxrandr-dev libxinerama-dev
+RUN apt update && apt install -y libxrandr-dev libxinerama-dev libxcursor-dev
 
 RUN apt remove --purge cmake 
 RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
