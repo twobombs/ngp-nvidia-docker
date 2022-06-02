@@ -6,8 +6,10 @@ sleep 10
 export DISPLAY=:0&&startxfce4&	
 x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
 /usr/share/novnc/utils/launch.sh --vnc localhost:5900&
+sleep 10
 
 export DISPLAY=:0&&xterm -e "xset s off" &
+export DISPLAY=:0&&xterm -e "./instant-ngp/testbed --scene ./instant-ngp/data/nerf/fox" &
 
 # end run, do not stop container ( debug feature, we need an empty node doing nothing )
 tail -f /dev/null
